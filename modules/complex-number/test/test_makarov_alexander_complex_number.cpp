@@ -15,13 +15,12 @@ TEST(Makarov_Alexander_ComlexNumberTest, Infty_Mlp) {
 }
 
 TEST(Makarov_Alexander_ComlexNumberTest, Is_i_Square_Minus_One) {
-    double real_1 = 0.0;
-    double img_1 = 1.0;
-    double real_2 = 0.0;
-    double img_2 = 1.0;
-    ComplexNumber z1(real_1, img_1), z2(real_2, img_2);
-    ASSERT_DOUBLE_EQ(-1.0, (z1 * z2).getRe());
-    ASSERT_DOUBLE_EQ(0.0, (z1 * z2).getIm());
+    double real = 0.0;
+    double img = 1.0;
+    ComplexNumber z1(real, img);
+	ComplexNumber result = z1 * z1;
+    ASSERT_DOUBLE_EQ(-1.0, result.getRe());
+    ASSERT_DOUBLE_EQ(0.0, result.getIm());
 }
 
 TEST(Makarov_Alexander_ComlexNumberTest, Conjugates_Multiplication) {
@@ -30,8 +29,9 @@ TEST(Makarov_Alexander_ComlexNumberTest, Conjugates_Multiplication) {
     double real_2 = 5.0;
     double img_2 = 3.0;
     ComplexNumber z1(real_1, img_1), z2(real_2, img_2);
-    double expected_re = z1.getRe() * z2.getRe() - z1.getIm() * z2.getIm();
+	double expected_re = 34.0;
     double expected_im = 0.0;
-    ASSERT_DOUBLE_EQ(expected_re, (z1 * z2).getRe());
-    ASSERT_DOUBLE_EQ(expected_im, (z1 * z2).getIm());
+	ComplexNumber result = z1 * z2;
+    ASSERT_DOUBLE_EQ(expected_re, result.getRe());
+    ASSERT_DOUBLE_EQ(expected_im, result.getIm());
 }
