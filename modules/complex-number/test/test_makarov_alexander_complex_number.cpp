@@ -1,15 +1,17 @@
 // Copyright 2021 Makarov Alexander
 
 #include <gtest/gtest.h>
+#include <limits>
 
 #include "include/complex_number.h"
 
-TEST(Makarov_Alexander_ComlexNumberTest, Zero_Div_Exception) {
+TEST(Makarov_Alexander_ComlexNumberTest, Infty_Mlp) {
     double real = 1.0;
-    double img = 0.0;
-    ComplexNumber numerator(real, img);
-    ComplexNumber denominator;
-    ASSERT_ANY_THROW(numerator / denominator);
+    double img = 1.0;
+    ComplexNumber z1(real, img);
+    ComplexNumber z2(0.0, std::numeric_limits<double>::infinity());
+    ASSERT_EQ(-std::numeric_limits<double>::infinity(), (z1 * z2).getRe());
+    ASSERT_EQ(std::numeric_limits<double>::infinity(), (z1 * z2).getIm());
 }
 
 TEST(Makarov_Alexander_ComlexNumberTest, Is_i_Square_Minus_One) {
