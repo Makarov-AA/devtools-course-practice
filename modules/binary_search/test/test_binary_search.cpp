@@ -19,7 +19,8 @@ TEST(Binary_Search_Test, DoubleSearch) {
     std::vector<double> array = {
         -3.7, -2.8, -1.9, 0.35, 1.5, 2.89, 3.14
     };
-    int result = binary_search::BinSearch<double>(3.14, array, 0, array.size() - 1);
+    int result = binary_search::BinSearch<double>(3.14, array, 0,
+                                                  array.size() - 1);
     ASSERT_EQ(6, result);
 }
 
@@ -27,7 +28,8 @@ TEST(Binary_Search_Test, StringSearch) {
     std::vector<std::string> array = {
         "a", "b", "c", "d", "e", "f", "g"
     };
-    int result = binary_search::BinSearch<std::string>("a", array, 0, array.size() - 1);
+    int result = binary_search::BinSearch<std::string>("a", array, 0,
+                                                    array.size() - 1);
     ASSERT_EQ(0, result);
 }
 

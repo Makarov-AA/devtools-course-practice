@@ -29,6 +29,6 @@ namespace binary_search {
         return flag ? middle : -1;
     }
 
-}
+}  // namespace binary_search
 
 #endif  // MODULES_BINARY_SEARCH_INCLUDE_BINARY_SEARCH_H_
