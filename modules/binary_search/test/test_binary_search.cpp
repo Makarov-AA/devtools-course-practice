@@ -61,22 +61,19 @@ TEST(Binary_Search_Test, IncorrectRight) {
     std::vector<int> array = {
         -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5
     };
-    int result;
-    ASSERT_ANY_THROW(result = binary_search::BinSearch<int>(3, array, 2, 27));
+    ASSERT_ANY_THROW(binary_search::BinSearch<int>(3, array, 2, 27));
 }
 
 TEST(Binary_Search_Test, IncorrectLeft) {
     std::vector<int> array = {
         -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5
     };
-    int result;
-    ASSERT_ANY_THROW(result = binary_search::BinSearch<int>(3, array, -7, 8));
+    ASSERT_ANY_THROW(binary_search::BinSearch<int>(3, array, -7, 8));
 }
 
 TEST(Binary_Search_Test, LeftGreaterThanRight) {
     std::vector<int> array = {
         -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5
     };
-    int result;
-    ASSERT_ANY_THROW(result = binary_search::BinSearch<int>(3, array, 8, 3));
+    ASSERT_ANY_THROW(binary_search::BinSearch<int>(3, array, 8, 3));
 }
