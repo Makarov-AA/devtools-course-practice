@@ -2,13 +2,14 @@
 #include <gtest/gtest.h>
 #include "include/generator.h"
 
+#include <iostream>
+
 TEST(Combination_Generate, Test1_Combination_Of_5_For_2) {
     int n = 5;
     int m = 2;
     generator g;
-    int h = n > m ? n : m;
-    int* a = new int[h];
-    for (int i = 0; i < h; i++)
+    int* a = new int[m];
+    for (int i = 0; i < m; i++)
         a[i] = 1;
 
     for (int i = 0; i < 5; i++) {
@@ -18,7 +19,7 @@ TEST(Combination_Generate, Test1_Combination_Of_5_For_2) {
 
     int res[] = { 2, 2 };
     for (int i = 0; i < m; i++) {
-        ASSERT_EQ(a[i], res[i]);
+        ASSERT_EQ(res[i], a[i]);
     }
 }
 
@@ -26,9 +27,8 @@ TEST(Combination_Generate, Test2_Combination_Of_7_For_3) {
     int n = 7;
     int m = 3;
     generator g;
-    int h = n > m ? n : m;
-    int* a = new int[h];
-    for (int i = 0; i < h; i++)
+    int* a = new int[m];
+    for (int i = 0; i < m; i++)
         a[i] = 1;
 
     for (int i = 0; i < 8; i++) {
@@ -38,7 +38,7 @@ TEST(Combination_Generate, Test2_Combination_Of_7_For_3) {
 
     int res[] = { 1, 2, 3 };
     for (int i = 0; i < m; i++) {
-        ASSERT_EQ(a[i], res[i]);
+        ASSERT_EQ(res[i], a[i]);
     }
 }
 
@@ -46,9 +46,8 @@ TEST(Combination_Generate, Test3_Combination_Of_100_For_5) {
     int n = 100;
     int m = 5;
     generator g;
-    int h = n > m ? n : m;
-    int* a = new int[h];
-    for (int i = 0; i < h; i++)
+    int* a = new int[m];
+    for (int i = 0; i < m; i++)
         a[i] = 1;
 
     for (int i = 0; i < 58; i++) {
@@ -58,7 +57,7 @@ TEST(Combination_Generate, Test3_Combination_Of_100_For_5) {
 
     int res[] = { 1, 1, 1, 1, 59 };
     for (int i = 0; i < m; i++) {
-        ASSERT_EQ(a[i], res[i]);
+        ASSERT_EQ(res[i], a[i]);
     }
 }
 
@@ -67,9 +66,8 @@ TEST(Combination_Generate,
     int n = 4;
     int m = 6;
     generator g;
-    int h = n > m ? n : m;
-    int* a = new int[h];
-    for (int i = 0; i < h; i++)
+    int* a = new int[m];
+    for (int i = 0; i < m; i++)
         a[i] = 1;
 
     for (int i = 0; i < 15; i++) {
@@ -79,7 +77,7 @@ TEST(Combination_Generate,
 
     int res[] = { 1, 1, 1, 2, 4, 4 };
     for (int i = 0; i < m; i++) {
-        ASSERT_EQ(a[i], res[i]);
+        ASSERT_EQ(res[i], a[i]);
     }
 }
 
@@ -100,6 +98,6 @@ TEST(Permutation_Generate,
 
     int res[] = { 2, 2 };
     for (int i = 0; i < m; i++) {
-        ASSERT_EQ(a[i], res[i]);
+        ASSERT_EQ(res[i], a[i]);
     }
 }
