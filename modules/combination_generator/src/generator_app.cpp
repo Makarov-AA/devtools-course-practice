@@ -14,16 +14,10 @@ Application::Application() : message_("") {}
 
 void Application::help(const char* appname, const char* message) {
     message_ =
-        std::string(message) +
-R"(This is a combination with repeats from N to M generator application.
-
-
-Please provide arguments in the following format:
-
-  $ " + appname + " <N> + <M> 
-
-Where all arguments are integer numbers
-)";
+        std::string(message) + "This is a combination with repeats from " \
+        "N to M generator application.\n\nPlease provide arguments in the " \
+        "following format:\n\n  $ " + appname + " <N> + <M> \n\nWhere all " \
+        "arguments are integer numbers\n";
 }
 
 bool Application::validateNumberOfArguments(int argc, const char** argv) {
