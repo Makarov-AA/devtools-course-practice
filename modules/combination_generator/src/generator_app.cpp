@@ -1,8 +1,5 @@
 // Copyright 2021 Makarov Alexandr
 
-#include "include/generator.h"
-#include "include/generator_app.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -10,17 +7,19 @@
 #include <string>
 #include <sstream>
 
+#include "include/generator.h"
+#include "include/generator_app.h"
+
 Application::Application() : message_("") {}
 
 void Application::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
-          "This is a combination wirh repeats from N to M generator" +
-          "application.\n\n" +
-          "Please provide arguments in the following format:\n\n" +
-          "  $ " + appname +
-          " <N> + <M> \n\n" +
-          "Where all arguments are integer numbers\n";
+          "This is a combination with repeats from N to M generator \
+application.\n\n\
+Please provide arguments in the following format:\n\n  \
+$ " + appname + " <N> + <M> \n\n\
+Where all arguments are integer numbers\n";
 }
 
 bool Application::validateNumberOfArguments(int argc, const char** argv) {
@@ -84,7 +83,8 @@ std::string Application::operator()(int argc, const char** argv) {
     generator g;
     while (g.NextSet(a, n, m))
             printSet(stream, a, m);
-
+    delete[] a;
+    
     message_ = stream.str();
 
     return message_;

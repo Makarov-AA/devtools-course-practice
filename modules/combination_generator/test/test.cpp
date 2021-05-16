@@ -22,6 +22,7 @@ TEST(Combination_Generate, Test1_Combination_Of_5_For_2) {
     for (int i = 0; i < m; i++) {
         ASSERT_EQ(res[i], a[i]);
     }
+    delete[] a;
 }
 
 TEST(Combination_Generate, Test2_Combination_Of_7_For_3) {
@@ -41,6 +42,7 @@ TEST(Combination_Generate, Test2_Combination_Of_7_For_3) {
     for (int i = 0; i < m; i++) {
         ASSERT_EQ(res[i], a[i]);
     }
+    delete[] a;
 }
 
 TEST(Combination_Generate, Test3_Combination_Of_100_For_5) {
@@ -60,6 +62,7 @@ TEST(Combination_Generate, Test3_Combination_Of_100_For_5) {
     for (int i = 0; i < m; i++) {
         ASSERT_EQ(res[i], a[i]);
     }
+    delete[] a;
 }
 
 TEST(Combination_Generate,
@@ -80,6 +83,7 @@ TEST(Combination_Generate,
     for (int i = 0; i < m; i++) {
         ASSERT_EQ(res[i], a[i]);
     }
+    delete[] a;
 }
 
 
@@ -101,4 +105,5 @@ TEST(Permutation_Generate,
     for (int i = 0; i < m; i++) {
         ASSERT_EQ(res[i], a[i]);
     }
+    delete[] a;
 }
