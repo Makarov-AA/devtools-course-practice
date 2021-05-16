@@ -15,11 +15,15 @@ Application::Application() : message_("") {}
 void Application::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
-          "This is a combination with repeats from N to M generator \
-application.\n\n\
-Please provide arguments in the following format:\n\n  \
-$ " + appname + " <N> + <M> \n\n\
-Where all arguments are integer numbers\n";
+R"(This is a combination with repeats from N to M generator application.
+
+
+Please provide arguments in the following format:
+
+  $ " + appname + " <N> + <M> 
+
+Where all arguments are integer numbers
+)";
 }
 
 bool Application::validateNumberOfArguments(int argc, const char** argv) {
@@ -84,7 +88,7 @@ std::string Application::operator()(int argc, const char** argv) {
     while (g.NextSet(a, n, m))
             printSet(stream, a, m);
     delete[] a;
-    
+
     message_ = stream.str();
 
     return message_;
