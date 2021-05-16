@@ -52,12 +52,12 @@ int parseInt(const char* arg) {
     return value;
 }
 
-void printSet(std::ostringstream& stream, int* a, int n) {
+void printSet(std::ostringstream* stream, int* a, int n) {
     static int num = 1;
-    stream << num++ << ": ";
+    *stream << num++ << ": ";
     for (int i = 0; i < n; i++)
-    stream << a[i] << " ";
-    stream << "\n";
+    *stream << a[i] << " ";
+    *stream << "\n";
 }
 
 std::string Application::operator()(int argc, const char** argv) {
@@ -83,10 +83,10 @@ std::string Application::operator()(int argc, const char** argv) {
     int *a = new int[m];
     for (int i = 0; i < m; i++)
         a[i] = 1;
-    printSet(stream, a, m);
+    printSet(&stream, a, m);
     generator g;
     while (g.NextSet(a, n, m))
-            printSet(stream, a, m);
+            printSet(&stream, a, m);
     delete[] a;
 
     message_ = stream.str();
