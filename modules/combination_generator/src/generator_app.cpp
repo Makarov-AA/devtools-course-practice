@@ -15,8 +15,9 @@ Application::Application() : message_("") {}
 void Application::help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
-          "This is a combination wirh repeats from N to M generator application.\n\n" +
-          "Please provide arguments in the following format:\n\n"+
+          "This is a combination wirh repeats from N to M generator" +
+          "application.\n\n" +
+          "Please provide arguments in the following format:\n\n" +
           "  $ " + appname +
           " <N> + <M> \n\n" +
           "Where all arguments are integer numbers\n";
@@ -40,7 +41,7 @@ int parseInt(const char* arg) {
     if (end[0]) {
         throw std::string("Wrong number format!");
     }
-    
+
     if (value <= 0) {
         throw std::string("Number must be positive!");
     }
@@ -73,7 +74,7 @@ std::string Application::operator()(int argc, const char** argv) {
     std::ostringstream stream;
     int n = args.n;
     int m = args.m;
-    
+
     stream << "N = " << n << "\n";
     stream << "M = " << m << "\n";
     int *a = new int[m];

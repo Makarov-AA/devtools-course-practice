@@ -1,8 +1,9 @@
 // Copyright 2021 Nikolaev Denis
 #include <gtest/gtest.h>
-#include "include/generator.h"
 
 #include <iostream>
+
+#include "include/generator.h"
 
 TEST(Combination_Generate, Test1_Combination_Of_5_For_2) {
     int n = 5;
